@@ -227,3 +227,7 @@ These can be done as separate PRs:
 2. **Fix `tools_used` tracking** — Currently `loop.py` collects `tools_used` but discards it; persisting it to session messages would give consolidation better tool visibility
 3. **Embedding-based retrieval** — Replace keyword matching with vector similarity for more accurate skill matching
 4. **Skill evolution** — Allow the LLM to update existing skills when a better workflow is discovered for the same task
+
+## 测试指南
+
+实操测试流程见 [skill-memory-testing.md](./skill-memory-testing.md)。

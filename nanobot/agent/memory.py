@@ -139,6 +139,7 @@ class MemoryStore:
         skills = self.find_relevant_skills(query, top_k) if query else self.load_skills()[-top_k:]
         if not skills:
             return ""
+        logger.info("Skill retrieval: query='{}' -> {} skill(s) injected: {}", query[:60], len(skills), [s.get("task", "?") for s in skills])
         parts = []
         for s in skills:
             steps = "\n".join(f"  {i + 1}. {step}" for i, step in enumerate(s.get("steps", [])))
