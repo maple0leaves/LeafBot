@@ -11,20 +11,21 @@ skill-memory 的核心闭环：
 2. 新任务到来时，检索 memory 注入 Agent 进行学习，再按步骤执行并继续沉淀。
 
 ```mermaid
+%%{init: {'themeVariables': {'fontSize': '12px'}, 'flowchart': {'nodeSpacing': 16, 'rankSpacing': 22}} }%%
 flowchart TD
     subgraph saveFlow [沉淀阶段]
-        s1[旧任务成功]
-        s2[提炼成功轨迹]
-        s3[抽象为workflow模板]
+        s1[旧任务<br/>成功]
+        s2[提炼成功<br/>轨迹]
+        s3[抽象为<br/>workflow模板]
         s4[写入memory]
         s1 --> s2 --> s3 --> s4
     end
 
     subgraph runFlow [复用阶段]
-        r1[新任务到来]
+        r1[新任务<br/>到来]
         r2[检索memory]
-        r3[注入Agent进行学习]
-        r4[按workflow分步执行]
+        r3[注入Agent<br/>进行学习]
+        r4[按workflow<br/>分步执行]
         r1 --> r2 --> r3 --> r4
     end
 
