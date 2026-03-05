@@ -1,7 +1,7 @@
 运行项目前  
 先执行  ./Crashcore 挂着，然后执行 proxy  
-启动项目 nanobot gateway，这个会加载配置机器人  
-                nanobot agent , 这个是在终端测试用
+启动项目 leafbot gateway，这个会加载配置机器人  
+                leafbot agent , 这个是在终端测试用
 
 ---
 
@@ -9,18 +9,18 @@
 
 ### 背景
 
-nanobot 原生只支持 Brave Search API 做网页搜索。由于没有 Brave API key，改为支持 Tavily API，并实现了「Brave 优先，失败用 Tavily」的 fallback 机制。
+leafbot 原生只支持 Brave Search API 做网页搜索。由于没有 Brave API key，改为支持 Tavily API，并实现了「Brave 优先，失败用 Tavily」的 fallback 机制。
 
 ### 改动文件（共 5 个）
 
 
 | 文件                           | 改动内容                                       |
 | ---------------------------- | ------------------------------------------ |
-| `nanobot/config/schema.py`   | `WebSearchConfig` 新增 `tavily_api_key` 字段   |
-| `nanobot/agent/tools/web.py` | `WebSearchTool` 增加 Tavily 搜索 + fallback 逻辑 |
-| `nanobot/cli/commands.py`    | gateway 和 agent 命令传入 `tavily_api_key`      |
-| `nanobot/agent/loop.py`      | 接收 `tavily_api_key` 并传给工具和子 agent          |
-| `nanobot/agent/subagent.py`  | 接收 `tavily_api_key` 并传给子 agent 的搜索工具       |
+| `leafbot/config/schema.py`   | `WebSearchConfig` 新增 `tavily_api_key` 字段   |
+| `leafbot/agent/tools/web.py` | `WebSearchTool` 增加 Tavily 搜索 + fallback 逻辑 |
+| `leafbot/cli/commands.py`    | gateway 和 agent 命令传入 `tavily_api_key`      |
+| `leafbot/agent/loop.py`      | 接收 `tavily_api_key` 并传给工具和子 agent          |
+| `leafbot/agent/subagent.py`  | 接收 `tavily_api_key` 并传给子 agent 的搜索工具       |
 
 
 ### Fallback 逻辑
@@ -31,7 +31,7 @@ nanobot 原生只支持 Brave Search API 做网页搜索。由于没有 Brave AP
 都没有 → 报错提示
 ```
 
-### 配置方式（`~/.nanobot/config.json`）
+### 配置方式（`~/.leafbot/config.json`）
 
 ```json
 {
@@ -52,7 +52,7 @@ nanobot 原生只支持 Brave Search API 做网页搜索。由于没有 Brave AP
 
 ### 代理配置
 
-nanobot 有两种网络请求，需要分别配置代理：
+leafbot 有两种网络请求，需要分别配置代理：
 
 
 | 请求类型                   | 代理方式                                | 说明              |
@@ -71,7 +71,7 @@ export https_proxy=http://127.0.0.1:7890
 ### 验证方法
 
 ```bash
-nanobot agent -m "搜索一下2026年最新AI新闻" --logs
+leafbot agent -m "搜索一下2026年最新AI新闻" --logs
 ```
 
 看日志中出现 `Tavily search: proxy enabled` 即为成功。

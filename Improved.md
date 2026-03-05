@@ -6,23 +6,23 @@
 
 **用户：**
 
-> [https://github.com/HKUDS/nanobot](https://github.com/HKUDS/nanobot) 请你查看这个项目，在Readme最后可以提交长期记忆的PR，我应该怎么改进这个项目的长期记忆功能
+> [https://github.com/HKUDS/leafbot](https://github.com/HKUDS/leafbot) 请你查看这个项目，在Readme最后可以提交长期记忆的PR，我应该怎么改进这个项目的长期记忆功能
 
 ---
 
 # 回答（整理版）
 
-我看了一下这个项目和相关资料，你这个想法其实**非常适合做 PR**，因为 **Nanobot** 本身是一个 **超轻量 agent micro-kernel**，主要只提供 agent loop、工具调用等基础能力，很多能力（比如长期记忆）是**刻意留空让社区扩展的**。
+我看了一下这个项目和相关资料，你这个想法其实**非常适合做 PR**，因为 **LeafBot** 本身是一个 **超轻量 agent micro-kernel**，主要只提供 agent loop、工具调用等基础能力，很多能力（比如长期记忆）是**刻意留空让社区扩展的**。
 
 因此如果你想在 README 最后提到的 **“long-term memory PR”** 里做贡献，关键是：
 
-**设计一个简单但 research-grade 的长期记忆模块，同时保持 Nanobot 的轻量架构。**
+**设计一个简单但 research-grade 的长期记忆模块，同时保持 LeafBot 的轻量架构。**
 
 ---
 
-# 一、先理解 Nanobot 当前架构
+# 一、先理解 LeafBot 当前架构
 
-Nanobot 的设计理念是 **micro-kernel agent**：
+LeafBot 的设计理念是 **micro-kernel agent**：
 
 ```
 Agent Loop
@@ -263,7 +263,7 @@ User lives in Taipei
 # 六、PR 结构示例
 
 ```
-nanobot/
+leafbot/
  ├── memory/
  │   ├── episodic_memory.py
  │   ├── semantic_memory.py
@@ -280,7 +280,7 @@ nanobot/
 # 七、PR README 建议标题
 
 ```
-Add Hierarchical Long-Term Memory System for Nanobot
+Add Hierarchical Long-Term Memory System for LeafBot
 ```
 
 功能：
@@ -294,7 +294,7 @@ Add Hierarchical Long-Term Memory System for Nanobot
 
 - minimal code
 - pluggable memory backend
-- compatible with nanobot philosophy
+- compatible with leafbot philosophy
 
 ---
 
@@ -336,13 +336,13 @@ sqlite
 
 **约 400 行**
 
-非常符合 Nanobot 的设计理念。
+非常符合 LeafBot 的设计理念。
 
 ---
 
 如果你愿意，我还可以帮你进一步做三件很有价值的事情：
 
-1️⃣ **直接设计一个可以被 Nanobot maintainers 接受的 PR 方案（含代码结构）**
+1️⃣ **直接设计一个可以被 LeafBot maintainers 接受的 PR 方案（含代码结构）**
 2️⃣ **给出完整 memory module 代码草稿（≈300 行）**
 3️⃣ **给你写好 PR description（非常像 ICML agent memory 设计）**
 

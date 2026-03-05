@@ -18,3 +18,4 @@ poetry.lock
 .pytest_cache/
 botpy.log
 .specstory/
+docs/

@@ -19,8 +19,8 @@ from pathlib import Path
 
 import pytest
 
-from nanobot.agent.context import ContextBuilder
-from nanobot.agent.memory import MemoryStore
+from leafbot.agent.context import ContextBuilder
+from leafbot.agent.memory import MemoryStore
 
 # ════════════════════════════════════════════════
 # SKILL CORPUS (8 diverse workflow patterns)

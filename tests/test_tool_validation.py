@@ -1,8 +1,8 @@
 from typing import Any
 
-from nanobot.agent.tools.base import Tool
-from nanobot.agent.tools.registry import ToolRegistry
-from nanobot.agent.tools.shell import ExecTool
+from leafbot.agent.tools.base import Tool
+from leafbot.agent.tools.registry import ToolRegistry
+from leafbot.agent.tools.shell import ExecTool
 
 
 class SampleTool(Tool):
